@@ -1,0 +1,15 @@
+<input id="dec">
+<input id="bin">
+<input id="oct">
+<input id="hex">
+<script>
+const elements = ['bin', 'oct', 'dec', 'hex'].map(name => document.querySelector('#' + name))
+const bases = [2, 8, 10, 16]
+elements.map((field, index) => field.onchange = _ => {
+  const value = parseInt(field.value, bases[index])
+  elements.map((field, index) => field.value = value.toString(bases[index]))
+})
+</script>
+<style>
+  body { padding: 20px }
+</style>
