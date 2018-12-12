@@ -1,14 +1,14 @@
-<input id="dec">
-<input id="bin">
-<input id="oct">
-<input id="hex">
+<input><input><input><input>
 <script>
-const bases = [2, 8, 10, 16]
-const elements = ['bin', 'oct', 'dec', 'hex'].map(name => document.querySelector('#' + name))
-elements.map((field, index) => field.onchange = _ => {
+const bases = [10, 2, 8, 16]
+const elements = document.querySelectorAll('input')
+elements.forEach((field, index) => {
+  console.log(field, index)
+  field.onchange = _ => {
+  console.log(field.value, bases[index])
   const value = parseInt(field.value, bases[index])
-  elements.map((field, index) => field.value = value.toString(bases[index]))
-})
+  elements.forEach((field, index) => field.value = value.toString(bases[index]))
+}})
 </script>
 <style>
   body { padding: 20px }
