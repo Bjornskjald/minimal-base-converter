@@ -2,13 +2,10 @@
 <script>
 const bases = [10, 2, 8, 16]
 const elements = document.querySelectorAll('input')
-elements.forEach((field, index) => {
-  console.log(field, index)
-  field.onchange = _ => {
-  console.log(field.value, bases[index])
+elements.forEach((field, index) => field.onchange = _ => {
   const value = parseInt(field.value, bases[index])
   elements.forEach((field, index) => field.value = value.toString(bases[index]))
-}})
+})
 </script>
 <style>
   body { padding: 20px }
