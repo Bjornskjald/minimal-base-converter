@@ -1,1 +1,1 @@
-<input><input><input><input><script>b=[10,2,8,16];e=document.querySelectorAll('input');e.forEach((f, i)=>f.onchange=_=>{v=parseInt(f.value,b[i]);e.forEach((f,i)=>f.value=v.toString(b[i]))})</script>
+<input><input><input><input><script>b=[10,2,8,16];document.querySelectorAll('input').forEach((f,i,e)=>f.onchange=_=>e.forEach((g,j)=>g.value=parseInt(f.value,b[i]).toString(b[j])))</script>
